@@ -49,10 +49,11 @@ int main(int argc, char *argv[]) {
 	
 	// Pass the name of the output file as a command line argument.
 	if (argc < 2) {
-		output.open(argv[1]); // Replace this with the name of the output file if you're not running it from a command line.
+		output.open("output.txt");
 	}
 	else {
-		output.open("output.txt");
+		output.open(argv[1]); // Replace this with the name of the output file if you're not running it from a command line.
+
 	}
 	// Main loop.
 	for (int i = 0; i < numOfContacts; i++) {
