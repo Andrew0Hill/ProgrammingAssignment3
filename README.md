@@ -5,4 +5,4 @@ If you're going to run it from a command line, just pass it the name of the outp
 Otherwise it should just print to 'output.txt'
 
 It doesn't compile correctly on the csegrid server, probably because the RNG that it uses is only supported in C++11.
-Anywhere else that has C++11 should work fine (Works for me on Visual Studio).
+Anywhere else that has C++11 should work fine (Works for me on Visual Studio). Just use the -std=c++11 flag
