@@ -23,7 +23,7 @@ std::string randomHouseNumber();
 std::string randomZip();
 std::vector<std::string> readFile(std::ifstream &input);
 int main(int argc, char *argv[]) {
-
+	int numOfContacts = 50; // Change this to change the number of contacts that are generated.
 	// Seeds the RNG.
 	srand(time(NULL)); 
 
@@ -55,24 +55,24 @@ int main(int argc, char *argv[]) {
 		output.open("output.txt");
 	}
 	// Main loop.
-	for (int i = 0; i < 50; i++) {
+	for (int i = 0; i < numOfContacts; i++) {
 		std::string FirstName = FNames.at(rand() % FNames.size());	// Strings to hold First Name and Last Name so they can be used again in the Email address.
 		std::string LastName = LNames.at(rand() % LNames.size());
-		output << randomID() << std::endl;			// Random ID Number.
-		output << FirstName << std::endl;			// First Name.
-		output << FNames.at(rand() % FNames.size()) << std::endl;  // First Name vector chooses a random entry to be a Middle Name.
-		output << LastName << std::endl;			// Last Name.
+		output << randomID() << std::endl;				// Random ID Number.
+		output << FirstName << std::endl;				// First Name.
+		output << FNames.at(rand() % FNames.size()) << std::endl;  	// First Name vector chooses a random entry to be a Middle Name.
+		output << LastName << std::endl;				// Last Name.
 		output << Companies.at(rand() % Companies.size()) << std::endl;	// Chooses a random company
-		output << randomPhoneNumber() << std::endl;	// Home Phone.		(These all use the same function)
-		output << randomPhoneNumber() << std::endl;	// Office Phone.
+		output << randomPhoneNumber() << std::endl;			// Home Phone.	(These all use the same function)
+		output << randomPhoneNumber() << std::endl;			// Office Phone.
 		output << LastName << "." << FirstName << "@" << emailSuffixes.at(rand() % 4) << std::endl;	// Random Email.
-		output << randomPhoneNumber() << std::endl;	// Cell Phone.
+		output << randomPhoneNumber() << std::endl;			// Cell Phone.
 		output << randomHouseNumber() << " " << Streets.at(rand() % Streets.size()) << " Street"  << std::endl;	// Street Address
 		output << Cities.at(rand() % Cities.size()) << std::endl;	// City.
 		output << States.at(rand() % States.size()) << std::endl;	// State.
-		output << randomZip() <<std::endl;	// Zip code.
-		output << "United States of America" << std::endl;	// Country.
-		output << "|" << std::endl;	// Delimiter.
+		output << randomZip() <<std::endl;				// Zip code.
+		output << "United States of America" << std::endl;		// Country.
+		output << "|" << std::endl;					// Delimiter.
 	}
 	
 
