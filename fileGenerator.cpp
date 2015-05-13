@@ -76,7 +76,7 @@ int main(int argc, char *argv[]) {
 		output << "|" << std::endl;					// Delimiter.
 	}
 	
-
+	output.close();
 	return 0;
 }
 
